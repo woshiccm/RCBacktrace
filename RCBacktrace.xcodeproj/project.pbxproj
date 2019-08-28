@@ -19,6 +19,7 @@
 		9C2CA0E1231576170087D221 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CA0E0231576170087D221 /* Assets.xcassets */; };
 		9C2CA0E4231576180087D221 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CA0E2231576180087D221 /* LaunchScreen.storyboard */; };
 		9C2CA0EC231576370087D221 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2CA0EB231576370087D221 /* SecondViewController.m */; };
+		9C2CA15723165DBB0087D221 /* RCBacktrace.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9C2CA15623165DBB0087D221 /* RCBacktrace.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9C2CA0E9231576360087D221 /* RCBacktraceDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCBacktraceDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C2CA0EA231576370087D221 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		9C2CA0EB231576370087D221 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		9C2CA15623165DBB0087D221 /* RCBacktrace.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RCBacktrace.podspec; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				9C2CA0B1231575A50087D221 /* RCBacktrace.swift */,
 				9C2CA0AF231575A50087D221 /* Demangler.swift */,
 				9C2CA0AE231575A50087D221 /* StackSymbol.swift */,
+				9C2CA15623165DBB0087D221 /* RCBacktrace.podspec */,
 				9C2CA0A5231575770087D221 /* RCBacktrace.h */,
 				9C2CA0A6231575770087D221 /* Info.plist */,
 			);
@@ -201,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2CA15723165DBB0087D221 /* RCBacktrace.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
