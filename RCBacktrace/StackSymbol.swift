@@ -15,17 +15,17 @@ public class StackSymbol: NSObject {
     public let symbolAddress: UInt
     public let demangledSymbol: String
     public let image: String
-    public let line: Int
-    private let index: Int
+    public let offset: Int
+    public let index: Int
 
-    public init(symbol: String, file: String, address: UInt, symbolAddress: UInt, image: String, line: Int, index: Int) {
+    public init(symbol: String, file: String, address: UInt, symbolAddress: UInt, image: String, offset: Int, index: Int) {
         self.symbol = symbol
         self.file = file
         self.address = address
         self.symbolAddress = symbolAddress
         self.demangledSymbol = _stdlib_demangleName(symbol)
         self.image = image
-        self.line = line
+        self.offset = offset
         self.index = index
     }
 
@@ -38,7 +38,7 @@ public class StackSymbol: NSObject {
     private func formattedDescription() -> String {
         return image.utf8CString.withUnsafeBufferPointer { (imageBuffer: UnsafeBufferPointer<CChar>) -> String in
             #if arch(x86_64) || arch(arm64)
-            return String(format: "%-4ld%-35s 0x%016llx %@ + %ld", index, UInt(bitPattern: imageBuffer.baseAddress), address, demangledSymbol, line)
+            return String(format: "%-4ld%-35s 0x%016llx %@ + %ld", index, UInt(bitPattern: imageBuffer.baseAddress), address, demangledSymbol, offset)
             #else
             return String(format: "%-4d%-35s 0x%08lx %@ + %d", index, UInt(bitPattern: imageBuffer.baseAddress), address, demangledSymbol, line)
             #endif
@@ -58,7 +58,7 @@ class StackSymbolFactory {
                                       address: address,
                                       symbolAddress: unsafeBitCast(info.dli_saddr, to: UInt.self),
                                       image: image(info: info),
-                                      line: offset(info: info, address: address),
+                                      offset: offset(info: info, address: address),
                                       index: index)
         return stackSymbol
     }

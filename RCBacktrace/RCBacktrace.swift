@@ -27,7 +27,7 @@ public func backtrace(_ thread: thread_t, stack: UnsafeMutablePointer<UnsafeMuta
 
     @objc public static func mach_callstack(_ thread: thread_t) -> [StackSymbol] {
         guard main_thread_t != nil else {
-            print("❌ [Error]: should setup in main thread first")
+            assertionFailure("❌ [Error]: should setup in main thread first")
             return []
         }
 
