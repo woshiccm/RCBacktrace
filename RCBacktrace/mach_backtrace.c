@@ -16,7 +16,7 @@
 #if defined __i386__
 #define THREAD_STATE_FLAVOR x86_THREAD_STATE
 #define THREAD_STATE_COUNT  x86_THREAD_STATE_COUNT
-#define __framePointer      __ebp
+#define FRAME_POINTER      __ebp
 
 #elif defined __x86_64__
 #define THREAD_STATE_FLAVOR x86_THREAD_STATE64
