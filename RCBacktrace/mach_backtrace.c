@@ -16,22 +16,22 @@
 #if defined __i386__
 #define THREAD_STATE_FLAVOR x86_THREAD_STATE
 #define THREAD_STATE_COUNT  x86_THREAD_STATE_COUNT
-#define FRAME_POINTER      __ebp
+#define __framePointer      __ebp
 
 #elif defined __x86_64__
 #define THREAD_STATE_FLAVOR x86_THREAD_STATE64
 #define THREAD_STATE_COUNT  x86_THREAD_STATE64_COUNT
-#define FRAME_POINTER      __rbp
+#define __framePointer      __rbp
 
 #elif defined __arm__
 #define THREAD_STATE_FLAVOR ARM_THREAD_STATE
 #define THREAD_STATE_COUNT  ARM_THREAD_STATE_COUNT
-#define FRAME_POINTER      __r[7]
+#define __framePointer      __r[7]
 
 #elif defined __arm64__
 #define THREAD_STATE_FLAVOR ARM_THREAD_STATE64
 #define THREAD_STATE_COUNT  ARM_THREAD_STATE64_COUNT
-#define FRAME_POINTER      __fp
+#define __framePointer      __fp
 
 #else
 #error "Current CPU Architecture is not supported"
@@ -111,7 +111,7 @@ int mach_backtrace(thread_t thread, void** stack, int maxSymbols) {
     callstack[i] = (void *)machineContext.__ss.__lr;
     ++i;
 #endif
-    void **currentFramePointer = (void **)machineContext.__ss.FRAME_POINTER;
+    void **currentFramePointer = (void **)machineContext.__ss.__framePointer;
     while (i < maxSymbols) {
         void **previousFramePointer = *currentFramePointer;
         if (!previousFramePointer) break;
