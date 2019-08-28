@@ -49,7 +49,7 @@ for symbol in symbols {
 Add the following line to your [Cartfile](https://github.com/carthage/carthage)
 
 ```
-git "https://github.com/woshiccm/RCBacktrace.git" "master"
+git "https://github.com/woshiccm/RCBacktrace.git" "0.0.1"
 ```
 
 ## License
