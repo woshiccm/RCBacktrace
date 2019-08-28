@@ -40,7 +40,7 @@ public class StackSymbol: NSObject {
             #if arch(x86_64) || arch(arm64)
             return String(format: "%-4ld%-35s 0x%016llx %@ + %ld", index, UInt(bitPattern: imageBuffer.baseAddress), address, demangledSymbol, offset)
             #else
-            return String(format: "%-4d%-35s 0x%08lx %@ + %d", index, UInt(bitPattern: imageBuffer.baseAddress), address, demangledSymbol, line)
+            return String(format: "%-4d%-35s 0x%08lx %@ + %d", index, UInt(bitPattern: imageBuffer.baseAddress), address, demangledSymbol, offset)
             #endif
         }
     }
