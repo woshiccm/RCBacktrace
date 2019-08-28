@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'RCBacktrace'
-  spec.version = '0.1.5'
+  spec.version = '0.1.6'
   spec.license = 'MIT'
   spec.summary = 'Getting backtrace of any thread for Objective-C and Swift'
   spec.homepage = 'https://github.com/woshiccm/RCBacktrace'

@@ -1,7 +1,8 @@
 # RCBacktrace
 
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![badge-pms](https://img.shields.io/badge/languages-Swift-orange.svg)
+![badge-pms](https://img.shields.io/badge/languages-Swift|ObjC-orange.svg)
+![badge-platforms](https://img.shields.io/cocoapods/p/RCBacktrace.svg?style=flat)
+![badge-languages](https://img.shields.io/badge/supports-Carthage|CocoaPods|SwiftPM-green.svg)
 [![Swift Version](https://img.shields.io/badge/Swift-4.0--5.0.x-F16D39.svg?style=flat)](https://developer.apple.com/swift)
 
 Getting backtrace of any thread for Objective-C and Swift. Only a small amount of C code, almost all done in Swift. 
@@ -49,7 +50,21 @@ for symbol in symbols {
 Add the following line to your [Cartfile](https://github.com/carthage/carthage)
 
 ```
-git "https://github.com/woshiccm/RCBacktrace.git" "0.0.1"
+git "https://github.com/woshiccm/RCBacktrace.git" "0.1.6"
+```
+
+### CocoaPods
+[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. To integrate Aspect into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target 'xxxx' do
+    pod 'RCBacktrace', '~> 0.1.6'
+end
+
 ```
 
 ## License
