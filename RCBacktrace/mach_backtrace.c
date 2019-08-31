@@ -108,7 +108,7 @@ int mach_backtrace(thread_t thread, void** stack, int maxSymbols) {
 
     int i = 0;
 #if defined(__arm__) || defined (__arm64__)
-    callstack[i] = (void *)machineContext.__ss.__lr;
+    stack[i] = (void *)machineContext.__ss.__lr;
     ++i;
 #endif
     void **currentFramePointer = (void **)machineContext.__ss.__framePointer;
